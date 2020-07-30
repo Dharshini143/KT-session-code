@@ -1,0 +1,184 @@
+import java.util.Scanner;
+public class AverageCalc 
+
+ {
+private static Scanner value;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int Maths,Physics,Chemistry;
+		float Average;
+	    value=new Scanner(System.in);
+	    
+	    
+	    //get details
+		System.out.println("Enter the Mark Details\n 1.Maths=");	
+		Maths=value.nextInt();
+		System.out.println("\n 2.Physics=");
+		Physics=value.nextInt();
+		System.out.println("\n 3.Chemistry=");
+		Chemistry=value.nextInt();
+		
+		//total and average calculations
+		int Total=Maths+Physics+Chemistry;
+		Average=Total/3;
+				
+		//making choice using switch case
+		int Choice1;
+		do
+		{
+		System.out.println("Select your choice(number) to see details\n 1.Maths Mark\n2.Physics Mark\n3.Chemistry Mark\n4.Total Mark\n5.Average Mark in %\n6.Highest Mark\n");
+		int choice=value.nextInt();
+		switch(choice)
+		{
+		case 1:
+			System.out.println(Maths);
+			break;
+		case 2:
+			System.out.println(Physics);
+			break;
+		case 3:
+			System.out.println(Chemistry);
+			break;
+		case 4:
+			System.out.println(Total);
+			break;
+		case 5:
+			System.out.println(Average+"%");
+			break;
+		case 6:
+			if(Maths>Physics&&Maths>Chemistry)
+			{
+				System.out.printf("Highest mark is Maths=");
+				System.out.println(Maths);	
+			}
+			else if(Physics>Chemistry&&Physics>Maths)
+			{
+				System.out.printf("Highest mark is physics=");	
+				System.out.println(Physics);
+			}
+			else
+			{
+				System.out.printf("Highest mark is chemistry=");
+				System.out.println(Chemistry);
+			}
+			break;
+		default:
+			System.out.printf(" Mark Details\n 1.Maths=");
+			System.out.println(Maths);
+			System.out.printf(" \n2.Physics=");
+			System.out.println(Physics);
+			System.out.printf(" \n 3.Chemistry=");
+			System.out.println(Chemistry);
+			System.out.printf(" \n 4.Total=",+Total);
+			System.out.println(Total);
+			System.out.printf("\n 5.Average=",+Average);
+			System.out.println(Average);
+			break;
+		}
+		System.out.println("Select your choice \n --> Enter 1 to continue \n --> Enter  0 to Exit");
+		Choice1=value.nextInt();
+		if(Choice1==0) { break;}
+		}while(Choice1==1);
+		
+		
+		
+
+	}
+
+}
+output:
+Enter the Mark Details
+ 1.Maths=
+90
+
+ 2.Physics=
+88
+
+ 3.Chemistry=
+95
+Select your choice(number) to see details
+ 1.Maths Mark
+2.Physics Mark
+3.Chemistry Mark
+4.Total Mark
+5.Average Mark in %
+6.Highest Mark
+
+1
+90
+Select your choice 
+ --> Enter 1 to continue 
+ --> Enter  0 to Exit
+1
+Select your choice(number) to see details
+ 1.Maths Mark
+2.Physics Mark
+3.Chemistry Mark
+4.Total Mark
+5.Average Mark in %
+6.Highest Mark
+
+2
+88
+Select your choice 
+ --> Enter 1 to continue 
+ --> Enter  0 to Exit
+1
+Select your choice(number) to see details
+ 1.Maths Mark
+2.Physics Mark
+3.Chemistry Mark
+4.Total Mark
+5.Average Mark in %
+6.Highest Mark
+
+3
+95
+Select your choice 
+ --> Enter 1 to continue 
+ --> Enter  0 to Exit
+1
+Select your choice(number) to see details
+ 1.Maths Mark
+2.Physics Mark
+3.Chemistry Mark
+4.Total Mark
+5.Average Mark in %
+6.Highest Mark
+
+4
+273
+Select your choice 
+ --> Enter 1 to continue 
+ --> Enter  0 to Exit
+1
+Select your choice(number) to see details
+ 1.Maths Mark
+2.Physics Mark
+3.Chemistry Mark
+4.Total Mark
+5.Average Mark in %
+6.Highest Mark
+
+5
+91.0%
+Select your choice 
+ --> Enter 1 to continue 
+ --> Enter  0 to Exit
+1
+Select your choice(number) to see details
+ 1.Maths Mark
+2.Physics Mark
+3.Chemistry Mark
+4.Total Mark
+5.Average Mark in %
+6.Highest Mark
+
+6
+Highest mark is chemistry=95
+Select your choice 
+ --> Enter 1 to continue 
+ --> Enter  0 to Exit
+
+

@@ -1,0 +1,31 @@
+package chromePrj;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+public class ChromeWeb {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver", "D:\\ChromeDriver\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		//open intranet
+		//driver.get("https://intranet.quest-global.com/intranet/QuEST-Global-Net.aspx");
+		//System.out.println(driver.getTitle());
+		//System.out.println(driver.getCurrentUrl());
+		
+		//open gmail
+		driver.get("https://gmail.com");
+		System.out.println(driver.getTitle());
+		driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
+		driver.findElement(By.cssSelector("#identifierId")).sendKeys("dharshinik2468@gmail.com");
+		driver.findElement(By.cssSelector("#identifierNext>div>button>div.H2SoFe.LZgQXe.TFhTPc")).click();
+		driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
+		//driver.findElement(By.cssSelector("#password > div.aCsJod.oJeWuf > div > div.OabDMe.cXrdqd.Y2Zypf>input").sendkeys("Riyasha@1998");
+		
+		driver.close();
+		driver.quit();
+	}
+
+}

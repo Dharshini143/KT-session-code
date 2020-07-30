@@ -1,0 +1,157 @@
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.*;
+ class GroceryItems                                               //Grocery class
+{
+	 	private static String getInput()throws IOException{
+		BufferedReader input=new BufferedReader(new InputStreamReader(System.in));
+		String s=input.readLine();
+		return s;
+	    }
+	private static final double Tomato=30;
+	private static final double Potato=20;
+	private static final double Beetroot=20;
+	private static final double Onion=80;
+	private static final double Carrot=40;
+				
+	float TotalG=0;
+	int Quantity;
+	int Choice1;
+	public int Grocery;
+	public int FruitT;
+	GroceryItems() throws Exception, IOException
+	{
+		System.out.println("--------------------Grocery Items---------------------------------------------------------------------------\n");
+		System.out.println("NOTE:Enter the weight in Kg\t[1/2Kg - 0.5]\t[1Kg- 1]");
+		System.out.println("\n\tItemNumber\t\tItemName\t\tQuantity(Kg)\t\tItemPrice\n---------------------------------------------------------------------------------------\n");
+		System.out.println("\t01\t\tTomato\t\t1Kg\t\t30\n\t02\t\tPotato\t\t1Kg\t\t20\n\t03\t\tBeetroot\t1kg\t\t20\n\t04\t\tOnion\t\t1Kg\t\t80\n\t05\t\tCarrot\t\t1Kg\t\t40\n");
+		System.out.println("-------------------------------------------------------------------------------------------------------------------\n");	
+	
+		do
+		{System.out.println("Type the  ItemNumber:");
+		int ItemNumber=Integer.parseInt(getInput());
+		switch(ItemNumber)
+		{
+		case 01:
+			System.out.println("Tomato Weight=");
+			Quantity=Integer.parseInt(getInput());
+			TotalG+=Tomato*Quantity;
+			break;
+		case 02:
+			System.out.println("Potato Weight=");
+			Quantity=Integer.parseInt(getInput());
+			TotalG+=Potato*Quantity;
+			break;
+		case 03:
+			System.out.println("Beetroot Weight=");
+			Quantity=Integer.parseInt(getInput());
+			TotalG+=Beetroot*Quantity;
+			break;
+		case 04:
+			System.out.println("Onion Weight=");
+			Quantity=Integer.parseInt(getInput());
+			TotalG+=Onion*Quantity;
+			break;
+		case 05:
+			System.out.println("Carrot Weight=");
+			Quantity=Integer.parseInt(getInput());
+			TotalG+=Carrot*Quantity;
+			break;	
+		default:
+			System.out.println("Item does not exist in Shop");
+			break;
+		}
+		System.out.println("Select your choice \n --> Press 1 to continue \n --> Press  0 to Exit");
+		Choice1=Integer.parseInt(getInput());
+		if(Choice1==0) { break;}
+		}while(Choice1==1);
+	System.out.println(TotalG);
+	float Grocery=TotalG;
+
+	
+}
+ class FruitItems extends GroceryItems                             //Fruit Class
+ {
+	private static final double Apple=30;
+	private static final double  Orange=20;
+	private static final double Pineapple=20;
+	private static final double Guauva=80;
+	private static final double Pomegrant=40;
+	
+	
+	float TotalF=0;
+	int Quantity;
+	int Choice1;
+	FruitItems()throws Exception,IOException
+	{
+		System.out.println("--------------------Fruit Items---------------------------------------------------------------------------\n");
+		System.out.println("NOTE:Enter the weight in Kg\t[1/2Kg - 0.5]\t[1Kg- 1]");
+		System.out.println("\n\tItemNumber\t\tItemName\t\tQuantity(Kg)\t\tItemPrice\n---------------------------------------------------------------------------------------\n");
+		System.out.println("\t01\t\tApple\t\t1Kg\t\t30\n\t02\t\tOrange\t\t1Kg\t\t20\n\t03\t\tPineapple\t1kg\t\t20\n\t04\t\tGuauva\t\t1Kg\t\t80\n\t05\t\tPomegrant\t\t1Kg\t\t40\n");
+		System.out.println("-------------------------------------------------------------------------------------------------------------------\n");	
+	
+		do
+		{System.out.println("Type the  ItemNumber:");
+		int ItemNumber=Integer.parseInt(getInput());
+		switch(ItemNumber)
+		{
+		case 01:
+			System.out.println("Tomato Weight=");
+			Quantity=Integer.parseInt(getInput());
+			TotalF+=Apple*Quantity;
+			break;
+		case 02:
+			System.out.println("Potato Weight=");
+			Quantity=Integer.parseInt(getInput());
+			TotalF+=Orange*Quantity;
+			break;
+		case 03:
+			System.out.println("Beetroot Weight=");
+			Quantity=Integer.parseInt(getInput());
+			TotalF+=Pineapple*Quantity;
+			break;
+		case 04:
+			System.out.println("Onion Weight=");
+			Quantity=Integer.parseInt(getInput());
+			TotalF+=Guauva*Quantity;
+			break;
+		case 05:
+			System.out.println("Carrot Weight=");
+			Quantity=Integer.parseInt(getInput());
+			TotalF+=Pomegrant*Quantity;
+			break;	
+		default:
+			System.out.println("Item does not exist in Shop");
+			break;
+		}
+		System.out.println("Select your choice \n --> Press 1 to continue \n --> Press  0 to Exit");
+		Choice1=Integer.parseInt(getInput());
+		if(Choice1==0) { break;}
+		}while(Choice1==1);
+			System.out.println(TotalF);
+			float FruitT=TotalF;	
+	}
+
+}
+ class Payment extends FruitItems{
+	 Payment()throws Exception, IOException{
+	float Pay=FruitT+Grocery;
+	System.out.println("Net Payment Of Fruit and Grocery is:"+Pay);
+ }
+	 
+ }
+
+public class MainBilling extends FruitItems{
+	MainBilling() throws Exception,IOException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public void main(String[] args)throws Exception,IOException {
+		// TODO Auto-generated method stub
+		Payment Obj=new Payment();
+	}
+
+}
+}
